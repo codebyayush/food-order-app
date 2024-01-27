@@ -1,0 +1,22 @@
+.input-number{
+    box-sizing: content-box;
+    width: 35px;
+    height: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+}
+
+.addBtn{
+    border-radius: 50px;
+    background-color: #8a2b06ff;
+    color: #ffff;
+    border: 1px solid #8a2b06ff;
+    padding: 10px;
+    font-weight: 600;
+    transition: 0.8s;
+}
+
+.addBtn:hover{
+    background-color: rgba(94, 27, 0, 0.998);
+    transition: 0.8s;
+}

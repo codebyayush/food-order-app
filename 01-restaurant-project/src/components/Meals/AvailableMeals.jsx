@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Availablemeals.module.css';
+import MealForm from './MealForm';
 
 const DUMMY_MEALS = [
     {
@@ -35,13 +36,20 @@ const AvailableMeals = () => {
         {DUMMY_MEALS.map((meals) => 
             {
                 return (
-                    <ul>
+                  <>
+                  <div className={classes['new-meal-bar']}>
+                    <ul className='item-list'>
                         <li className={classes.name}>{meals.name}</li>
                         <li className={classes.desc}>{meals.description}</li>
-                        <li className={classes.price}>{meals.price}</li>
-                        <hr />
+                        <li className={classes.price}>$ {meals.price}</li>
                     </ul>
-                )
+                    <div className={classes['meal-form']}>
+                        <MealForm/>
+                    </div>
+                  </div>
+                  <hr className={classes.hr}/>
+                  </>
+                  )
             }            
         )}
     </div>
