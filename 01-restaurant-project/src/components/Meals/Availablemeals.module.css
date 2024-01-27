@@ -1,0 +1,40 @@
+
+.container {
+    text-align: left;
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+    margin-top: 3rem;
+    position: relative;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 14px;
+
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 12px;
+    box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 12px;
+}
+
+.name{
+    font-size: medium;
+    font-weight: 600;
+}
+
+.price{
+    font-size: medium;
+    font-weight: 600;
+    color: brown;
+}
+
+.desc{
+    font-size: medium;
+    font-style: italic;
+    font-weight: 100;
+}
+
+ul{
+    padding-left: 20px;
+    list-style-type: none;
+}
