@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./MealForm.module.css";
+import CartContext from "../../Store/cart-context";
 
-const MealForm = () => {
-  const [count, setCount] = useState(0);
-
-  const addBtnClickHandler = () => {
-        
-  };
+const MealForm = (props) => {
+  const [count, setCount] = useState(1);
+  const ctx = useContext(CartContext);
 
   const fontStyle = {
     fontSize: "small",
@@ -14,8 +12,8 @@ const MealForm = () => {
   };
 
   const amountChangeHandler = (e) => {
-        setCount(e.target.value)
-  }
+    setCount(e.target.value);
+  };
 
   return (
     <>
@@ -25,12 +23,18 @@ const MealForm = () => {
           <input
             type="number"
             className={classes["input-number"]}
-            value={count}
             onChange={amountChangeHandler}
-            min={0}
+            value={count}
+            min={1}
+            max={5}
+            defaultValue={1}
           />
         </p>
-        <button type="button" onClick={addBtnClickHandler} className={classes.addBtn}>
+        <button
+          type="button"
+          onClick={() => ctx.addItem({...props.mealItem, amount: count})}
+          className={classes.addBtn}
+        >
           + Add Item
         </button>
       </form>

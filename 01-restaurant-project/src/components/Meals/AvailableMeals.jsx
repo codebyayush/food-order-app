@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './Availablemeals.module.css';
 import MealForm from './MealForm';
 
@@ -29,7 +29,7 @@ const DUMMY_MEALS = [
     },
   ];
 
-const AvailableMeals = () => {
+const AvailableMeals = (props) => {
 
   return (
     <div className={classes.container}>
@@ -38,13 +38,13 @@ const AvailableMeals = () => {
                 return (
                   <>
                   <div className={classes['new-meal-bar']}>
-                    <ul className='item-list'>
+                    <ul>
                         <li className={classes.name}>{meals.name}</li>
                         <li className={classes.desc}>{meals.description}</li>
                         <li className={classes.price}>$ {meals.price}</li>
                     </ul>
                     <div className={classes['meal-form']}>
-                        <MealForm/>
+                        <MealForm mealItem={meals}/>
                     </div>
                   </div>
                   <hr className={classes.hr}/>
